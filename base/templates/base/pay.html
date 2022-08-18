@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} {% block 'body' %}
+{%include 'base/components/nav.html'%}
+<div class="container min-vh-100">
+    {% if error_message %}
+    <p class="text-warning">{{error_message}}</p>
+    {% endif %}
+<form action="{% url 'base:handle_pay' %}" method="post">
+{% csrf_token %}
+<div class="row">
+    <div class="col-md-6">
+        <h3 class="text-center">Personal Details</h3>
+        <hr>
+{{form.as_table}}
+        <input type="hidden" value="{{ id }}" name="room_id">
+    </div>
+    <div class="col-md-6">
+        <h3 class="text-center">Payment</h3>
+        <hr>
+        <p>Pay Now using <span class="badge bg-light text-success">M-PESA</span></p>
+        <p class="text-muted">You will be prompted to input your M-Pesa Pin to deduct booking fees</p>
+        <button  type="submit" class="btn btn-primary">Make payment Now</button>
+    </div>
+</div>
+</form>
+</div>
+{% include 'base/components/footer.html' %} {%endblock 'body' %}

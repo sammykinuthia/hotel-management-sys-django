@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'body' %}
+{% include 'base/components/nav.html' %}
+<div class="main">
+    <div class="hero">
+
+        <div class="inner-hero row">
+
+            <div class="brand col-md-6">
+                <h1 class="text-danger title">Royal Palace Hotel</h1>
+                <p class="hero-description">Get the best Hotel services in the Kenya. Royal Hotel is the Leading Hotel Country-wide with its amazing customer care personel and clean Housing for our customers.<br/>Get started today and you wount regret </p>
+                <a href="{% url 'base:book' %}" class="btn btn-outline-danger btn-lg text-light fw-bolder">BOOK NOW</a>
+            </div>
+
+        </div>
+    </div>
+<div id="about" class="about container">
+    <h2 class="text-center">About Us</h3>
+    <hr>
+    <div class="inner-about row">
+        <div class="about-image col-md-5   ">
+            <img class="img-fluid" src=" {% static 'base/images/customer.jpg' %}" alt="customer">
+            
+        </div>
+        <div class="about-desc bg-light col-md-6">
+            <h3 class="text-center">Customer Service</h3>
+            <p>In 2019, we were award the best Hotel customer care providers country wide. This is shows our commitment to serving our clients offering only the best for the various packages available. </p>
+            <p>We are looking forward to working with you any time  when you are ready. Come have fun at our spacious rooms ranging at affordable prices</p>
+        </div>
+    </div>
+</div>
+    </div>
+
+    {% include 'base/components/footer.html' %}
+{% endblock 'body' %}
