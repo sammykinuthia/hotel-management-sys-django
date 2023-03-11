@@ -16,7 +16,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class RoomAdmin(admin.ModelAdmin):
     list_display = ["id", 'category',  'room_code']
 
-
+admin.site.site_header = "Royal Palace Hotel"
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Room, RoomAdmin)
